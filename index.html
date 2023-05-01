@@ -4,16 +4,42 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Projects</title>
     <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <script src="script.js" defer></script>
+    <title>My Projects</title>
 </head>
 
 <body>
-    <h1>My Projects</h1>
-    <div id="projects">
-        <!-- Add your project links here -->
-    </div>
-    <script src="script.js"></script>
+    <header>
+        <div class="header-content">
+            <h1>My Projects</h1>
+            <h3 id="dynamicMessage" class="dynamic-message"></h3>
+        </div>
+        
+        <button id="themeToggle" class="theme-toggle">
+            <span class="theme-toggle__icon">
+                <span class="theme-toggle__icon--sun">☀️</span>
+                <span class="theme-toggle__icon--moon">🌑</span>
+            </span>
+        </button>
+    </header>
+    <main>
+        <div id="projectsContainer" class="projects-container">
+            <!-- Projects -->
+        </div>
+    </main>
 </body>
 
+<footer>
+    <div class="footer-content">
+        <p>&copy; 2023 Tilman Perkons</p>
+        <nav>
+            <ul>
+                <!--<li><a href="#">About</a></li>
+                <li><a href="#">Contact</a></li>-->
+            </ul>
+        </nav>
+    </div>
+</footer>
 </html>

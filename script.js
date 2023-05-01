@@ -1,18 +1,95 @@
-document.addEventListener("DOMContentLoaded", function () {
+document.addEventListener("DOMContentLoaded", () => {
+    const themeToggle = document.getElementById("themeToggle");
+    const dynamicMessage = document.getElementById("dynamicMessage");
+    const projectsContainer = document.getElementById("projectsContainer");
+
+    themeToggle.addEventListener("click", () => {
+        document.documentElement.dataset.theme = document.documentElement.dataset.theme === "dark" ? "" : "dark";
+    });
+
+    function typeEffect(element, messages, period) {
+        let currentMessageIndex = 0;
+        let currentCharIndex = 0;
+        let isDeleting = false;
+        let currentTimeout;
+
+        function type() {
+            const currentMessage = messages[currentMessageIndex];
+            const newText = isDeleting
+                ? currentMessage.slice(0, currentCharIndex - 1)
+                : currentMessage.slice(0, currentCharIndex + 1);
+            element.textContent = newText;
+
+            if (!isDeleting && currentCharIndex === currentMessage.length) {
+                currentTimeout = setTimeout(() => {
+                    isDeleting = true;
+                    type();
+                }, period);
+            } else if (isDeleting && currentCharIndex === 0) {
+                isDeleting = false;
+                currentMessageIndex = (currentMessageIndex + 1) % messages.length;
+                type();
+            } else {
+                currentCharIndex += isDeleting ? -1 : 1;
+                currentTimeout = setTimeout(type, isDeleting ? 60 : 120);
+            }
+        }
+
+        type();
+
+        return () => clearTimeout(currentTimeout);
+    }
+
+    const messages = [
+        "Welcome to my portfolio!",
+        "Check out my latest projects below.",
+        "Placing one leg in front of the other makes you walk...",
+        "Quick note: This site is still a work in progress.",
+        "Drink water! Stay hydrated!",
+        "You can breathe through your nose and your mouth at the same time!",
+        "Thanks for taking the time to explore my portfolio!",
+        "Whenever you breathe in you reset your 10 minute timer to live.",
+        "Every 60 seconds in Africa, a minute passes.",
+        "A single strand of spaghetti is called a 'spaghetto'.",
+        "Rats can't throw up.",
+        "Oxford University is older than the Aztec Empire.",
+        "The word 'bed' looks like a bed.",
+        "Banging your head against a wall for one hour burns 150 calories.",
+        "The average person falls asleep in 7 minutes.",
+        ""
+    ];
+    const stopTypingEffect = typeEffect(dynamicMessage, messages, 2000);
+
     const projects = [
         {
-            name: "Piano",
-            url: "/Piano/"
-        }
-        // Add more projects here
+            title: "Virtual Piano", link: "/Piano", description: "A virtual piano that can be played with the keyboard or a connected MIDI Piano.",
+            image: "./assets/images/VirtualPianoText.png", category: "webapp"
+        },
+        // ...add more projects
     ];
 
-    const projectsContainer = document.getElementById("projects");
-
-    projects.forEach(project => {
-        const projectDiv = document.createElement("div");
-        projectDiv.classList.add("project");
-        projectDiv.innerHTML = `<a href="${project.url}" target="_blank">${project.name}</a>`;
-        projectsContainer.appendChild(projectDiv);
+    projects.forEach((project) => {
+        const projectCard = document.createElement("div");
+        projectCard.classList.add("project-card");
+        projectCard.dataset.category = project.category;
+        projectCard.innerHTML = `
+        <div class="project-card__image-container">
+            <img class="project-card__image" src="${project.image}" alt="${project.title}">
+        </div>
+        <div class="project-card__content">
+            <h3 class="project-card__title">${project.title}</h3>
+            <p class="project-card__description">${project.description}</p>
+            <a class="project-card__button" href="${project.link}" target="_blank">Visit Project</a>
+        </div>
+    `;
+        projectsContainer.appendChild(projectCard);
+        projectCard.querySelector(".project-card__image-container").addEventListener("click", () => {
+            window.open(project.link, "_blank");
+        });
     });
+
+
+
+    // Cleanup function to stop typing effect when the page is unloaded
+    window.addEventListener("beforeunload", stopTypingEffect);
 });
