@@ -66,6 +66,10 @@ document.addEventListener("DOMContentLoaded", () => {
             image: "./assets/images/VirtualPiano.png", category: "webapp"
         },
         {
+            title: "NASA Image Search", link: "/NASAImageSearch", description: "A web app that allows you to search for images from NASA's image API.",
+            image: "./assets/images/NASAImageSearch.png", category: "webapp"
+        },
+        {
             title: "Counters", link: "/Counters", description: "A simple web app that allows you to keep track of multiple counters.",
             image: "./assets/images/Counters.png", category: "webapp"
         },
