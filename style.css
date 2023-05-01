@@ -1,0 +1,40 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    background-color: #333;
+    color: #fff;
+    padding: 1rem;
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+#projects {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.project {
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin: 1rem;
+    padding: 1rem;
+    width: 250px;
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.project a {
+    text-decoration: none;
+    color: #333;
+}
+
+.project:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
