@@ -2,7 +2,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const projects = [
         {
             name: "Piano",
-            url: "https://tilmanper.github.io/Piano/"
+            url: "/Piano/"
         }
         // Add more projects here
     ];
