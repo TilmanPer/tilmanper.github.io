@@ -63,7 +63,11 @@ document.addEventListener("DOMContentLoaded", () => {
     const projects = [
         {
             title: "Virtual Piano", link: "/Piano", description: "A virtual piano that can be played with the keyboard or a connected MIDI Piano.",
-            image: "./assets/images/VirtualPianoText.png", category: "webapp"
+            image: "./assets/images/VirtualPiano.png", category: "webapp"
+        },
+        {
+            title: "Counters", link: "/Counters", description: "A simple web app that allows you to keep track of multiple counters.",
+            image: "./assets/images/Counters.png", category: "webapp"
         },
         // ...add more projects
     ];
