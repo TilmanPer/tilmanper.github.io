@@ -43,20 +43,16 @@ document.addEventListener("DOMContentLoaded", () => {
     const messages = [
         "Welcome to my portfolio!",
         "Check out my latest projects below.",
-        "Placing one leg in front of the other makes you walk...",
         "Quick note: This site is still a work in progress.",
         "Drink water! Stay hydrated!",
         "You can breathe through your nose and your mouth at the same time!",
         "Thanks for taking the time to explore my portfolio!",
-        "Whenever you breathe in you reset your 10 minute timer to live.",
-        "Every 60 seconds in Africa, a minute passes.",
         "A single strand of spaghetti is called a 'spaghetto'.",
         "Rats can't throw up.",
         "Oxford University is older than the Aztec Empire.",
         "The word 'bed' looks like a bed.",
         "Banging your head against a wall for one hour burns 150 calories.",
         "The average person falls asleep in 7 minutes.",
-        ""
     ];
     const stopTypingEffect = typeEffect(dynamicMessage, messages, 2000);
 
