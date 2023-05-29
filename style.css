@@ -230,6 +230,7 @@ main {
 
 .project-card__title {
   margin: 0;
+  margin-top: 10px;
 }
 
 .project-card__description {

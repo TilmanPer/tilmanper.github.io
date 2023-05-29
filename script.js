@@ -1,4 +1,24 @@
 document.addEventListener("DOMContentLoaded", () => {
+    const projects = [
+        {
+            title: "Virtual Piano", link: "/Piano", description: "A virtual piano that can be played with the keyboard or a connected MIDI Piano.",
+            image: "./assets/images/VirtualPiano.png", category: "webapp"
+        },
+        {
+            title: "NASA Image Search", link: "/NASAImageSearch", description: "A web app that allows you to search for images from NASA's image API.",
+            image: "./assets/images/NASAImageSearch.png", category: "webapp"
+        },
+        {
+            title: "Counters", link: "/Counters", description: "A simple web app that allows you to keep track of multiple counters.",
+            image: "./assets/images/Counters.png", category: "webapp"
+        },
+        {
+            title: "Calculator", link: "/Calculator", description: "Very basic calculator application. Supports keyboard input.",
+            image: "./assets/images/Calculator.png", category: "webapp"
+        },
+        // ...add more projects
+    ];
+
     const themeToggle = document.getElementById("themeToggle");
     const dynamicMessage = document.getElementById("dynamicMessage");
     const projectsContainer = document.getElementById("projectsContainer");
@@ -66,26 +86,6 @@ document.addEventListener("DOMContentLoaded", () => {
         "The average person falls asleep in 7 minutes.",
     ];
     const stopTypingEffect = typeEffect(dynamicMessage, messages, 2000);
-
-    const projects = [
-        {
-            title: "Virtual Piano", link: "/Piano", description: "A virtual piano that can be played with the keyboard or a connected MIDI Piano.",
-            image: "./assets/images/VirtualPiano.png", category: "webapp"
-        },
-        {
-            title: "NASA Image Search", link: "/NASAImageSearch", description: "A web app that allows you to search for images from NASA's image API.",
-            image: "./assets/images/NASAImageSearch.png", category: "webapp"
-        },
-        {
-            title: "Counters", link: "/Counters", description: "A simple web app that allows you to keep track of multiple counters.",
-            image: "./assets/images/Counters.png", category: "webapp"
-        },
-        {
-            title: "Calculator", link: "/Calculator", description: "Very basic calculator application. Supports keyboard input.",
-            image: "./assets/images/Calculator.png", category: "webapp"
-        },
-        // ...add more projects
-    ];
 
     projects.forEach((project) => {
         const projectCard = document.createElement("div");
