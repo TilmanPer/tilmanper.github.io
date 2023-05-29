@@ -3,10 +3,21 @@ document.addEventListener("DOMContentLoaded", () => {
     const dynamicMessage = document.getElementById("dynamicMessage");
     const projectsContainer = document.getElementById("projectsContainer");
 
-    themeToggle.addEventListener("click", () => {
+    // Theme functions
+    const saveThemeToLocalStorage = () => localStorage.setItem("theme", document.documentElement.dataset.theme);
+    const getThemeFromLocalStorage = () => localStorage.getItem("theme");
+    const switchTheme = () => {
         document.documentElement.dataset.theme = document.documentElement.dataset.theme === "dark" ? "" : "dark";
-    });
+        saveThemeToLocalStorage();
+    };
 
+    // Set theme based on user preference or stored theme
+    if ((window.matchMedia("(prefers-color-scheme: dark)").matches && !getThemeFromLocalStorage()) || getThemeFromLocalStorage() === "dark") {
+        switchTheme();
+    }
+    themeToggle.addEventListener("click", switchTheme);
+
+    document.documentElement.dataset.theme = getThemeFromLocalStorage() || "";
     function typeEffect(element, messages, period) {
         let currentMessageIndex = 0;
         let currentCharIndex = 0;
@@ -95,8 +106,6 @@ document.addEventListener("DOMContentLoaded", () => {
             window.open(project.link, "_blank");
         });
     });
-
-
 
     // Cleanup function to stop typing effect when the page is unloaded
     window.addEventListener("beforeunload", stopTypingEffect);
