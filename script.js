@@ -69,6 +69,10 @@ document.addEventListener("DOMContentLoaded", () => {
             title: "Counters", link: "/Counters", description: "A simple web app that allows you to keep track of multiple counters.",
             image: "./assets/images/Counters.png", category: "webapp"
         },
+        {
+            title: "Calculator", link: "/Calculator", description: "Very basic calculator application. Supports keyboard input.",
+            image: "./assets/images/Calculator.png", category: "webapp"
+        },
         // ...add more projects
     ];
 
