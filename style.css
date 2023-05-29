@@ -110,8 +110,8 @@ header h1 {
   transition: background-color var(--transition-speed);
 }
 
-.theme-toggle:hover{
-    background-color: transparent;
+.theme-toggle:hover {
+  background-color: transparent;
 }
 
 .theme-toggle__icon {
@@ -196,7 +196,7 @@ main {
   position: relative;
   height: 300px;
   overflow: hidden;
-  
+
   background: linear-gradient(to right, #222 1px, transparent 1px),
     linear-gradient(to bottom, #222 1px, transparent 1px);
   background-size: 30px 30px;
@@ -215,7 +215,7 @@ main {
   transition: transform var(--transition-speed);
 }
 
-.project-card__image:hover  {
+.project-card__image:hover {
   transform: scale(1.1);
 }
 
@@ -240,7 +240,6 @@ main {
   -webkit-line-clamp: unset;
   max-height: unset;
 }
-
 
 .project-card__button {
   align-self: flex-start;
@@ -300,4 +299,16 @@ footer {
 
 .footer-content a:hover {
   color: var(--accent-color);
+}
+
+@media screen and (max-width: 1420px) {
+  .projects-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media screen and (max-width: 750px) {
+  .projects-container {
+    grid-template-columns: 1fr;
+  }
 }
