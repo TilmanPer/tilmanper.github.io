@@ -9,6 +9,10 @@ document.addEventListener("DOMContentLoaded", () => {
             image: "./assets/images/NASAImageSearch.png", category: "webapp"
         },
         {
+            title: "Conways Game Of Life", link: "/GameOfLife", description: "Simulation of Conways Game of Life with various settings and controls.",
+            image: "./assets/images/GameOfLife.png", category: "webapp"
+        },
+        {
             title: "Counters", link: "/Counters", description: "A simple web app that allows you to keep track of multiple counters.",
             image: "./assets/images/Counters.png", category: "webapp"
         },
