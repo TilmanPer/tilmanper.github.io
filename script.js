@@ -2,23 +2,27 @@ document.addEventListener("DOMContentLoaded", () => {
     const projects = [
         {
             title: "Virtual Piano", link: "/Piano", description: "A virtual piano that can be played with the keyboard or a connected MIDI Piano.",
-            image: "./assets/images/VirtualPiano.png", category: "webapp"
+            image: "./assets/images/VirtualPiano.png", category: "tool"
         },
         {
             title: "NASA Image Search", link: "/NASAImageSearch", description: "A web app that allows you to search for images from NASA's image API.",
-            image: "./assets/images/NASAImageSearch.png", category: "webapp"
+            image: "./assets/images/NASAImageSearch.png", category: "tool"
         },
         {
             title: "Conways Game Of Life", link: "/GameOfLife", description: "Simulation of Conways Game of Life with various presets and controls.",
-            image: "./assets/images/GameOfLife.png", category: "webapp"
+            image: "./assets/images/GameOfLife.png", category: "game"
+        },
+        {
+            title: "Cookie Clicker", link: "/GameOfLife", description: "My take on the popular cookie clicker game. Click the cookie to gain points and buy upgrades.",
+            image: "./assets/images/CookieClicker.png", category: "game"
         },
         {
             title: "Counters", link: "/Counters", description: "A simple web app that allows you to keep track of multiple counters.",
-            image: "./assets/images/Counters.png", category: "webapp"
+            image: "./assets/images/Counters.png", category: "tool"
         },
         {
             title: "Calculator", link: "/Calculator", description: "Very basic calculator application. Supports keyboard input.",
-            image: "./assets/images/Calculator.png", category: "webapp"
+            image: "./assets/images/Calculator.png", category: "tool"
         },
         // ...add more projects
     ];
