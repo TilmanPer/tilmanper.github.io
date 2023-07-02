@@ -13,7 +13,7 @@ document.addEventListener("DOMContentLoaded", () => {
             image: "./assets/images/GameOfLife.png", category: "game"
         },
         {
-            title: "Cookie Clicker", link: "/GameOfLife", description: "My take on the popular cookie clicker game. Click the cookie to gain points and buy upgrades.",
+            title: "Cookie Clicker", link: "/CookieClicker", description: "My take on the popular cookie clicker game. Click the cookie to gain points and buy upgrades.",
             image: "./assets/images/CookieClicker.png", category: "game"
         },
         {
