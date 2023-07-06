@@ -2,27 +2,27 @@ document.addEventListener("DOMContentLoaded", () => {
     const projects = [
         {
             title: "Virtual Piano", link: "/Piano", description: "A virtual piano that can be played with the keyboard or a connected MIDI Piano.",
-            image: "./assets/images/VirtualPiano.png", category: "tool"
+            image: "./assets/images/VirtualPiano.png", category: "tool", tags: ["HTML", "JavaScript", "CSS"]
         },
         {
             title: "NASA Image Search", link: "/NASAImageSearch", description: "A web app that allows you to search for images from NASA's image API.",
-            image: "./assets/images/NASAImageSearch.png", category: "tool"
+            image: "./assets/images/NASAImageSearch.png", category: "tool", tags: ["HTML", "JavaScript", "CSS"]
         },
         {
             title: "Conways Game Of Life", link: "/GameOfLife", description: "Simulation of Conways Game of Life with various presets and controls.",
-            image: "./assets/images/GameOfLife.png", category: "game"
+            image: "./assets/images/GameOfLife.png", category: "game", tags: ["HTML", "JavaScript", "CSS"]
         },
         {
-            title: "Cookie Clicker", link: "/CookieClicker", description: "My take on the popular cookie clicker game. Click the cookie to gain points and buy upgrades.",
-            image: "./assets/images/CookieClicker.png", category: "game"
+            title: "Cookie Clicker", link: "/CookieClicker", description: "My take on the popular Cookie Clicker game. Click the cookie to gain points and buy upgrades.",
+            image: "./assets/images/CookieClicker.png", category: "game", tags: ["HTML", "JavaScript", "CSS"]
         },
         {
             title: "Counters", link: "/Counters", description: "A simple web app that allows you to keep track of multiple counters.",
-            image: "./assets/images/Counters.png", category: "tool"
+            image: "./assets/images/Counters.png", category: "tool", tags: ["HTML", "JavaScript", "CSS"]
         },
         {
             title: "Calculator", link: "/Calculator", description: "Very basic calculator application. Supports keyboard input.",
-            image: "./assets/images/Calculator.png", category: "tool"
+            image: "./assets/images/Calculator.png", category: "tool", tags: ["HTML", "JavaScript", "CSS"]
         },
         // ...add more projects
     ];
@@ -84,7 +84,7 @@ document.addEventListener("DOMContentLoaded", () => {
         "Check out my latest projects below.",
         "Quick note: This site is still a work in progress.",
         "Drink water! Stay hydrated!",
-        "Thanks for taking the time to explore my portfolio!", 
+        "Thanks for taking the time to explore my portfolio!",
         "Have a great day!",
         "Banging your head against a wall for one hour burns 150 calories.",
     ];
@@ -94,6 +94,8 @@ document.addEventListener("DOMContentLoaded", () => {
         const projectCard = document.createElement("div");
         projectCard.classList.add("project-card");
         projectCard.dataset.category = project.category;
+        projectCard.dataset.tags = project.tags;
+
         projectCard.innerHTML = `
         <div class="project-card__image-container">
             <img class="project-card__image" src="${project.image}" alt="${project.title}">
@@ -101,13 +103,25 @@ document.addEventListener("DOMContentLoaded", () => {
         <div class="project-card__content">
             <h3 class="project-card__title">${project.title}</h3>
             <p class="project-card__description">${project.description}</p>
-            <a class="project-card__button" href="${project.link}" target="_blank">Visit Project</a>
+            <div class="project-card__bottom">
+                <a class="project-card__button" href="${project.link}" target="_blank">Visit Project</a>
+                    <div class="project-card__tags"></div>
+            </div>
         </div>
     `;
+        for (const tag of project.tags) {
+            const tagElement = document.createElement("span");
+            tagElement.classList.add("project-card__tag");
+            tagElement.classList.add(tag.toLowerCase().replace(" ", "-"));
+            tagElement.textContent = tag;
+            projectCard.querySelector(".project-card__tags").appendChild(tagElement);
+        }
         projectsContainer.appendChild(projectCard);
         projectCard.querySelector(".project-card__image-container").addEventListener("click", () => {
             window.open(project.link, "_blank");
         });
+
+
     });
 
     // Cleanup function to stop typing effect when the page is unloaded

@@ -214,6 +214,24 @@ main {
   justify-content: space-between; /* Add this line */
 }
 
+.project-card__bottom {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between; /* Add this line */
+}
+
+.project-card__tags {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  margin-bottom: 10px;
+}
+
 .project-card__image {
   display: block;
   cursor: pointer;
@@ -256,6 +274,23 @@ main {
 .project-card__button:hover {
   background-color: var(--secondary-color);
   color: var(--text-color);
+}
+
+.project-card__tag {
+  width: fit-content;
+  height: fit-content;
+
+  padding: 0.25rem 0.75rem;
+  font-size: 0.75rem;
+  background-color: var(--accent-color);
+  color: var(--background);
+  text-align: center;
+  text-decoration: none;
+  border-radius: var(--border-radius);
+  transition: background-color var(--transition-speed),
+    color var(--transition-speed);
+  margin-left: 5px;
+
 }
 
 footer {
